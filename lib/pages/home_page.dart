@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
   double days = 2.5;
 
   String name = "Rituraj";
-  //num can be used in plane of double or int
+  //num can be used in place of double or int
   num dayss = 3.5;
   //var can be used as a common data type for all type of variables
   var bishu = 'tuesday';
