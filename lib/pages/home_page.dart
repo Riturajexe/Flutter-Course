@@ -23,7 +23,9 @@ class HomePage extends StatelessWidget {
       home: Scaffold(
 
         appBar: AppBar(title: Text('Scaffold app'),),
- 
+        drawer: Drawer(),
+
+
         body:Material(
         child: Center(
           child: Container(
