@@ -21,15 +21,11 @@ class MyApp extends StatelessWidget {
       ),
 
       //Giving routes
-
-      
-
       routes: {
         "/":(context)=>LoginPage(),
         "/login":(context)=>LoginPage(),
         "/home":(context)=>HomePage(),
-
-      },
+        },
 
       //initial route gives the route which will open when app start for ex.=>""""initialRoute:"/home""""" this will open "/home" as default
       //initialRoute:"/home",
