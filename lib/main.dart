@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
 
     //this line removes the debug banner
-    debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
 
       //Giving routes
 
