@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/pages/home_page.dart';
 import 'package:flutter_course/pages/login_page.dart';
+import 'package:flutter_course/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -22,12 +23,15 @@ class MyApp extends StatelessWidget {
         
       ),
 
+    //this line removes the debug banner
+    debugShowCheckedModeBanner: false,
+
       //Giving routes
 
       routes: {
-        "/": (context) => LoginPage(),
-        "/login": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
       },
 
       //initial route gives the route which will open when app start for ex.=>""""initialRoute:"/home""""" this will open "/home" as default
