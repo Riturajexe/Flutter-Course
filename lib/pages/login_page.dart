@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+
 
 class LoginPage extends StatelessWidget {
   const LoginPage({ Key? key }) : super(key: key);
@@ -14,15 +17,63 @@ class LoginPage extends StatelessWidget {
 
 
         body:Material(
-        child: Center(
-          child: Container(
-            child: Text("Login Page",style: TextStyle(
-              fontSize: 40,
-              color:Colors.blue,
+          color:Colors.white,
+        child: Column(
+          children:[
+            Image.asset('assets/images/lo.png',fit:BoxFit.cover),
+            SizedBox(
+              height:20.0
+            ),
+            Text('Welcome',style:GoogleFonts.pacifico(textStyle:TextStyle(
+              fontSize:24,
               fontWeight:FontWeight.bold,
-            ),),
-          ),
-        ),
+              
+            ),
+            ),
+            ),
+            SizedBox(
+              height:20.0
+            ),
+            
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical:18.0,horizontal:32.0),
+              child: Column(
+                children:[
+                  TextFormField(
+                decoration:InputDecoration(
+                  hintText:"Enter Username",
+                  labelText:"Username"
+                ),),
+
+              
+
+              TextFormField(
+                obscureText: true,
+                decoration:InputDecoration(
+                  hintText:"Enter Password",
+                  labelText:"Password",
+                ),
+              ),
+                SizedBox(
+              height:20.0
+            ),
+            ElevatedButton(
+                  child:Text("Login"),
+                  onPressed: (){
+                    print("Hello World");
+                  },
+                  style:TextButton.styleFrom()
+                ),
+                ]
+              ),
+            )
+            
+              
+              
+            
+            
+          ],
+        )
       ),
    
       )

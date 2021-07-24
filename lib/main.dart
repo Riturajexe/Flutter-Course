@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/pages/home_page.dart';
 import 'package:flutter_course/pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,17 +19,15 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
+        
       ),
 
       //Giving routes
 
-      
-
       routes: {
-        "/":(context)=>LoginPage(),
-        "/login":(context)=>LoginPage(),
-        "/home":(context)=>HomePage(),
-
+        "/": (context) => LoginPage(),
+        "/login": (context) => LoginPage(),
+        "/home": (context) => HomePage(),
       },
 
       //initial route gives the route which will open when app start for ex.=>""""initialRoute:"/home""""" this will open "/home" as default
