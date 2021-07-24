@@ -55,23 +55,18 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
                 SizedBox(
-              height:20.0
-            ),
-            ElevatedButton(
-                  child:Text("Login"),
-                  onPressed: (){
-                    print("Hello World");
-                  },
-                  style:TextButton.styleFrom()
+                  height:20.0
+               ),
+                  ElevatedButton(
+                        child:Text("Login"),
+                        onPressed: (){
+                          print("Hello World");
+                        },
+                          style:TextButton.styleFrom()
                 ),
                 ]
               ),
             )
-            
-              
-              
-            
-            
           ],
         )
       ),
