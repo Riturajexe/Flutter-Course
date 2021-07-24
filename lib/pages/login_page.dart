@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
                   decoration:InputDecoration(
                     hintText:"Enter Username",
                     labelText:"Username"
-                  ),),
+                    ),),
         
                 
         
@@ -57,24 +57,19 @@ class LoginPage extends StatelessWidget {
                 ),
                   SizedBox(
                 height:40.0
-              ),
-              ElevatedButton(
-                    child:Text("Login"),
-                    onPressed: (){
-                      Navigator.pushNamed(context,MyRoutes.homeRoute);
+                ),
+                  ElevatedButton(
+                        child:Text("Login"),
+                        onPressed: (){
+                        Navigator.pushNamed(context,MyRoutes.homeRoute);
                     },
-                    style:TextButton.styleFrom(
+                      style:TextButton.styleFrom(
                       minimumSize:Size(150,40),
                     ),
                   ),
                   ]
                 ),
               )
-              
-                
-                
-              
-              
             ],
           ),
         )
