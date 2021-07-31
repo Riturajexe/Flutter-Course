@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_course/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+//Stateful widget is used for making a widget which can be reloaded many times
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -67,6 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                               await Future.delayed(Duration(seconds:1));
                               Navigator.pushNamed(context, MyRoutes.homeRoute);
                             },
+                            //below is a AnimatedContainer which is used for showing some animatinons in a Container
                             child: AnimatedContainer(
                               duration: Duration(seconds: 1),
                               height: 50, width: changeButton?50:140, 
