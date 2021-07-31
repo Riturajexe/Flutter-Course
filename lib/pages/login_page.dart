@@ -12,6 +12,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool changeButton = false;
+  //Here is a key which act like a dependency for our form widget
   final _formKey = GlobalKey<FormState>();
 
   MoveToHome(BuildContext context) async {
@@ -55,7 +56,10 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 18.0, horizontal: 32.0),
-                      child: Form(
+                      
+                    
+                    //Below is a widget which help us to make a thing like form
+                    child: Form(
                         key: _formKey,
                         child: Column(
                           children: [
@@ -67,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                               decoration: InputDecoration(
                                   hintText: "Enter Username",
                                   labelText: "Username"),
+                              //here are some validations which helps our app look more efficient
                               validator: (value) {
                                 if (value!.isEmpty) {
                                   return "Username cannot be empty";
@@ -95,6 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                               
                               borderRadius:
                                   BorderRadius.circular(changeButton ? 50 : 8),
+                              //instead of the line below w can also use child: Ink(
                               child: InkWell(
                                 onTap: () => MoveToHome(context),
                                 child: AnimatedContainer(
@@ -115,15 +121,6 @@ class _LoginPageState extends State<LoginPage> {
                                             fontWeight: FontWeight.bold,
                                             fontSize: 18,
                                           )),
-                                  // ElevatedButton(
-                                  //   child: Text("Login"),
-                                  //   onPressed: () {
-                                  //     Navigator.pushNamed(context, MyRoutes.homeRoute);
-                                  //   },
-                                  //   style: TextButton.styleFrom(
-                                  //     minimumSize: Size(150, 40),
-                                  //   ),
-                                  // ),
                                 ),
                               ),
                             )
