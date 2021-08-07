@@ -5,7 +5,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imageUrl =
-        "";
+        "https://analyticsindiamag.com/wp-content/uploads/2020/10/7d744a684fe03ebc7e8de545f97739dd.jpg";
     return Drawer(
       child: Container(
         color: Colors.deepPurple,
@@ -19,7 +19,7 @@ class MyDrawer extends StatelessWidget {
                 accountName: Text("Rituraj Sharma"),
                 accountEmail: Text("riturajsharma02007@gmail.com"),
                 currentAccountPicture: CircleAvatar(
-                  
+
                   backgroundImage: NetworkImage(imageUrl),
                 ),
               ),
