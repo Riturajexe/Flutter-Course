@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_course/pages/home_page.dart';
 import 'package:flutter_course/pages/login_page.dart';
 import 'package:flutter_course/utils/routes.dart';
+import 'package:flutter_course/widgets/themes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -18,10 +19,8 @@ class MyApp extends StatelessWidget {
 
       //For adjusting color of all widgets accordingly in light way **do not work with themeMode: ThemeMode.dark,
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-        
-      ),
+      theme: MyTheme.lightTheme(context),
+      //theme: MyTheme.darkTheme(context),
 
     //this line removes the debug banner
       debugShowCheckedModeBanner: false,
