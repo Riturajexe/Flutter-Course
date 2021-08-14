@@ -3,6 +3,7 @@ import 'package:flutter_course/pages/home_page.dart';
 import 'package:flutter_course/pages/login_page.dart';
 import 'package:flutter_course/utils/routes.dart';
 import 'package:flutter_course/widgets/themes.dart';
+// ignore: unused_import
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
       //darkTheme: ThemeData(brightness: Brightness.dark),
     );
     //Calling my function bringvegetable
+    // ignore: dead_code
     bringVegetables(rupees: 50, thaila: true);
   }
 
