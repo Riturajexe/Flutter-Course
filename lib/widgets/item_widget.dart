@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_course/models/catalog.dart';
-import 'package:flutter_course/models/catalog.dart';
 
+
+// ignore: camel_case_types
 class itemWidget extends StatelessWidget {
   final Item item;
 
   const itemWidget({Key? key, required this.item})
+      // ignore: unnecessary_null_comparison
       : assert(item != null),
         super(key: key);
 
@@ -20,7 +22,7 @@ class itemWidget extends StatelessWidget {
         },
         leading: Image.network(item.image),
         title: Text(item.name),
-        subtitle: Text(item.description),
+        subtitle: Text(item.desc),
         trailing: Text(
           
             "\$${item.price}",
