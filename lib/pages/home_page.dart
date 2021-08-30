@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_course/pages/home_detail_pages.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:flutter_course/models/catalog.dart';
@@ -49,11 +50,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               CatalogHeader(),
               if (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
-                CatalogList().expand()
+                CatalogList().py16().expand()
               else
-                Center(
-                  child: CircularProgressIndicator(),
-                )
+                CircularProgressIndicator().centered().expand(),
             ],
           ),
         ),
@@ -71,7 +70,7 @@ class CatalogHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         "Catalog App".text.xl5.bold.color(MyTheme.darkBluish).make(),
-        "TrendingProducts".text.xl2.make()
+        "Trending Products".text.xl2.make()
       ],
     );
   }
@@ -87,7 +86,15 @@ class CatalogList extends StatelessWidget {
         itemCount: CatalogModel.items!.length,
         itemBuilder: (context, index) {
           final catalog = CatalogModel.items![index];
-          return CatalogItem(catalog: catalog);
+          return InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HomeDetailPage(
+                            Catalog: catalog,
+                            catalog: catalog,
+                          ))),
+              child: CatalogItem(catalog: catalog));
         });
   }
 }
@@ -101,29 +108,39 @@ class CatalogItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VxBox(
-      child: Row(
-        children: [CatalogImage(image: catalog.image),
-        Expanded(child: Column(crossAxisAlignment:CrossAxisAlignment.start,
-        mainAxisAlignment:MainAxisAlignment.center,
-        children: [
-          
-          catalog.name.text.bold.lg.color(MyTheme.darkBluish).make(),
-          catalog.desc.text.medium.make(),
-          10.heightBox,
-          ButtonBar(
-            alignment: MainAxisAlignment.spaceBetween,
-            buttonPadding: EdgeInsets.zero,
-            children: [
-            "\$${catalog.price}".text.bold.xl.make(),
-            ElevatedButton(onPressed: (){}, 
-            style: ButtonStyle(backgroundColor:MaterialStateProperty.all(MyTheme.darkBluish),shape: MaterialStateProperty.all(StadiumBorder())),
-            child: "Buy".text.make())
+      child: Hero(
+        tag: Key(catalog.id.toString()),
+        child: Row(
+          children: [
+            CatalogImage(image: catalog.image),
+            Expanded(
+                child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                catalog.name.text.bold.lg.color(MyTheme.darkBluish).make(),
+                catalog.desc.text.medium.make(),
+                10.heightBox,
+                ButtonBar(
+                  alignment: MainAxisAlignment.spaceBetween,
+                  buttonPadding: EdgeInsets.zero,
+                  children: [
+                    "\$${catalog.price}".text.bold.xl.make(),
+                    ElevatedButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(MyTheme.darkBluish),
+                            shape: MaterialStateProperty.all(StadiumBorder())),
+                        child: "Buy".text.make())
+                  ],
+                ).pOnly(right: 8.0)
+              ],
+            ))
           ],
-          ).pOnly(right:8.0)
-        ],))
-        ],
+        ),
       ),
-    ).white.rounded.square(150).make().p16();
+    ).white.rounded.square(150).make().p4();
   }
 }
 
