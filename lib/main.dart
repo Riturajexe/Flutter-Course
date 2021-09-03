@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course/pages/cart_page.dart';
 import 'package:flutter_course/pages/home_page.dart';
 import 'package:flutter_course/pages/login_page.dart';
 import 'package:flutter_course/utils/routes.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => LoginPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.CartRoute: (context) => CartPage(),
       },
 
       //initial route gives the route which will open when app start for ex.=>""""initialRoute:"/home""""" this will open "/home" as default
