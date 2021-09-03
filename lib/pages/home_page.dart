@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_course/pages/home_detail_pages.dart';
 import 'package:flutter_course/utils/routes.dart';
@@ -43,8 +44,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: ()=>Navigator.pushNamed(context, MyRoutes.CartRoute), child:Icon(CupertinoIcons.cart),backgroundColor: MyTheme.darkBluish),
-      backgroundColor: MyTheme.creamColor,
+      floatingActionButton: FloatingActionButton(onPressed: ()=>Navigator.pushNamed(context, MyRoutes.CartRoute), child:Icon(CupertinoIcons.cart,color: Colors.white,),backgroundColor: context.theme.buttonColor),
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(bottom: 0,left:8 ,right:8 ,top: 4),
@@ -73,7 +74,7 @@ class CatalogHeader extends StatelessWidget {
       
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "Catalog App".text.xl5.bold.color(MyTheme.darkBluish).make(),
+        "Catalog App".text.xl5.bold.color(context.theme.accentColor).make(),
         "Trending Products".text.xl2.make()
       ],
     ).p0();
@@ -131,7 +132,7 @@ class CatalogItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  catalog.name.text.bold.lg.color(MyTheme.darkBluish).make(),
+                  catalog.name.text.bold.lg.color(context.accentColor).make(),
                   catalog.desc.text.medium.make(),
                   10.heightBox,
                   ButtonBar(
@@ -143,7 +144,7 @@ class CatalogItem extends StatelessWidget {
                           onPressed: () {},
                           style: ButtonStyle(
                               backgroundColor:
-                                  MaterialStateProperty.all(MyTheme.darkBluish),
+                                  MaterialStateProperty.all(context.theme.buttonColor),
                               shape: MaterialStateProperty.all(StadiumBorder())),
                           child: "Add To Cart".text.make())
                     ],
@@ -154,7 +155,7 @@ class CatalogItem extends StatelessWidget {
           ),
         ),
       ),
-    ).white.rounded.square(150).make().pOnly(top: 8.0,bottom: 8.0,left: 0,right: 0);
+    ).color(context.cardColor).rounded.square(150).make().pOnly(top: 8.0,bottom: 8.0,left: 0,right: 0);
   }
 }
 
@@ -170,7 +171,7 @@ class CatalogImage extends StatelessWidget {
         .box
         .rounded
         .p8
-        .color(MyTheme.creamColor)
+        .color(context.canvasColor)
         .make()
         .p16()
         .w40(context);

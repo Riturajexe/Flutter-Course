@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
       //home: HomePage(),
 
       //For adjusting color of all widgets accordingly in light way **do not work with themeMode: ThemeMode.dark,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
-      //theme: MyTheme.darkTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
 
     //this line removes the debug banner
       debugShowCheckedModeBanner: false,
